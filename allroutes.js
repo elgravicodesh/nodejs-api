@@ -10,6 +10,8 @@ const { gender } = require('./models/gender.js');
 
 // ROUTE FOR GENDER
 app.group("/gender", (router) => {
+    
+    // Add authenticateJWT to demand auth token
     // LIST GENDERS
     router.get('/list', authenticateJWT, (req, res) => {
             this.data = new gender(mysqlConnection);
